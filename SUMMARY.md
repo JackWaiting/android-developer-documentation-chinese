@@ -11,5 +11,10 @@
        * [适配不同的语言](content/training/getting-started/supporting-different-devices/supporting-different-languages/README.md)
        * [适配不同的屏幕](content/training/getting-started/supporting-different-devices/supporting-different-screens/README.md)
        * [适配不同的系统版本](content/training/getting-started/supporting-different-devices/supporting-different-platform-versions/README.md)
+       
+       
+       
+       
+       
  
 
