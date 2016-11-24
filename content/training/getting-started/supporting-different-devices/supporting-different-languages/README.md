@@ -21,6 +21,7 @@
                  　　　　　　　strings.xml    
 　　　　            values-fr/     
        　　　　　　　          strings.xml</font>    
+                        
 将各个语言区域的字符串值添加到相应文件中。
  
 在运行时，Android 系统会根据当前为用户设备设置的语言区域使用相应的字符串资源集。
