@@ -11,12 +11,10 @@ Android 使用两种常规属性来归类设备屏幕：尺寸和密度。你应
 
 ## 创建不同的布局
 
-为了优化不同屏幕尺寸上的用户体验，你应当针对你想要支持的的每一个屏幕尺寸创建一个唯一的布局 `XML` 文件。
+为了优化不同屏幕尺寸上的用户体验，你应当针对你想要支持的的每一个屏幕尺寸创建一个唯一的布局 `XML` 文件。每一个布局文件应当北村到正确的资源目录，以 `-<屏幕尺寸>` 的后缀来命名。例如，针对大屏幕的唯一布局应当存在 `res/layout-large/` 目录底下。
 
-To optimize your user experience on different screen sizes, you should create a unique layout XML file for each screen size you want to support. Each layout should be saved into the appropriate resources directory, named with a -<screen_size> suffix. For example, a unique layout for large screens should be saved under res/layout-large/.
+> **备注**：Android 会自动的调整你布局的比例，来正确的适配屏幕。所以，你不必担心不同屏幕尺寸上布局中的 UI 元素的绝对尺寸，反而需要注意的是关注影响用户体验的布局结构（例如重要视图之间的尺寸或位置）。
 
-
-> **Note**:
 
 
 
