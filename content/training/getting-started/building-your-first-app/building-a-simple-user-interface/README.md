@@ -9,7 +9,7 @@ Android 提供对应于 View 和 ViewGroup 子类的 XML 词汇，以便您使�
 
 布局是 ViewGroup 的子类。在本练习中，您将学习创建 LinearLayout。
 
-![image](https://developer.android.com/images/viewgroup.png)
+![](viewgroup.png)
 
 ##创建线性布局
 1.在 Android Studio 的 Project 窗口中，打开 app > res > layout > activity_main.xml。
@@ -126,7 +126,7 @@ android:layout_width 和 android:layout_height
 
 如图 2 所示，该布局当前设计为根据内容大小调整 EditText 和 Button 小部件的尺寸。
 
-![](https://developer.android.com/images/training/firstapp/edittext_wrap.png)
+![](edittext_wrap.png)
 
 图 2. EditText 小组件和 Button 小部件的宽度均设置为 "wrap_content"。
 
@@ -148,7 +148,7 @@ Weight 值是一个数字，用于指定每个视图与其他同级视图在剩�
 
 将宽度设置为零 (0dp) 可提高布局性能，这是因为如果将宽度设置为 "wrap_content"，则会要求系统计算宽度，而该计算最终毫无意义，因为 weight 值还需要计算另一个宽度，才能填满剩余空间。
 
-![](https://developer.android.com/images/training/firstapp/edittext_gravity.png)
+![](edittext_gravity.png)
 
 图 3. EditText 小部件获得了布局的所有 weight，因此它填满了 LinearLayout 中的剩余空间。
 
