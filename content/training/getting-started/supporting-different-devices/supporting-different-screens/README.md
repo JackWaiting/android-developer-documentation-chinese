@@ -104,9 +104,9 @@ MyProject/
 
 更多关于创建应用图标资源细节和指导原则，请参见[图标设计指导](https://material.google.com/style/icons.html)。
 
-
-
-
+备注：  
+翻译：[@ifeegoo](https://github.com/ifeegoo)  
+原始文档：https://developer.android.com/training/basics/supporting-devices/screens.html
 
 
 
