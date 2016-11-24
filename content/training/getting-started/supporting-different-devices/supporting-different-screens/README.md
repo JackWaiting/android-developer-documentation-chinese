@@ -38,7 +38,7 @@ MyProject/
 }
 ```
 
-当你的应用运行时，系统会自动根据当前屏幕尺寸从布局目录中载入正确的布局文件。更多关于 Android 如何选择合适资源的信息，可以参见[资源提供向导](https://developer.android.com/guide/topics/resources/providing-resources.html#BestMatch)
+当你的应用运行时，系统会自动根据当前屏幕尺寸从布局目录中载入正确的布局文件。更多关于 Android 如何选择合适资源的信息，可以参见[资源提供向导](https://developer.android.com/guide/topics/resources/providing-resources.html#BestMatch)。
 
 另外一个例子，这里有一个工程，有针对横屏的备用布局：
 
@@ -107,18 +107,3 @@ MyProject/
 备注：  
 翻译：[@ifeegoo](https://github.com/ifeegoo)  
 原始文档：https://developer.android.com/training/basics/supporting-devices/screens.html
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
