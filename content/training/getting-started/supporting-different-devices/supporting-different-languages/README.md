@@ -82,3 +82,5 @@ textView.setText(R.string.hello_world);
     android:text="@string/hello_world" />
 ```
 
+>翻译：[@misparking](https://github.com/misparking)    
+原始文档：<https://developer.android.com/training/basics/supporting-devices/languages.html>
