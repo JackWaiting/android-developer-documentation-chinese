@@ -11,27 +11,29 @@
 
 
 一旦你决定了为哪些语言提供支持，便可创建资源子目录和字符串资源文件。 例如：
-    
- <font color=#00CC90 size=2>
+
     MyProject/    
-          　　　res/    
-            　　　　values/        
-                 　　　　　　　strings.xml    
-            　　　　values-es/    
-                 　　　　　　　strings.xml    
-　　　　            values-fr/     
-       　　　　　　　          strings.xml</font>    
-                        
+          res/    
+             values/        
+                 　strings.xml    
+            　values-es/    
+                 　strings.xml     
+              values-fr/     
+       　　　　　　　 strings.xml
+    
+    
 将各个语言区域的字符串值添加到相应文件中。
  
 在运行时，Android 系统会根据当前为用户设备设置的语言区域使用相应的字符串资源集。
 
 例如，以下是一些面向不同语言的不同字符串资源文件。
 
-英语（默认语言区域)，/values/strings.xml：
+英语（默认语言区域)，`/values/strings.xml`：    
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <resources>
-    <string name="title">My Application</string>
-    <string name="hello_world">Hello World!</string>
+```xml
+    <?xml version="1.0" encoding="utf-8"?>    
+    <resources>    
+        <string name="title">My Application</string>
+        <string name="hello_world">Hello World!</string>
     </resources>
+```
