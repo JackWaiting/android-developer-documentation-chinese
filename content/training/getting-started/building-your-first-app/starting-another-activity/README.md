@@ -149,3 +149,11 @@ activity_display_message.xml 并将属性 android:id="@+id/activity_display_mess
 
 就这么简单，您的第一个 Android 应用已成功诞生！ 
 
+
+备注：
+
+翻译：JackWaiting
+[https://github.com/JackWaiting](https://github.com/JackWaiting "JackWaiting")
+
+原始文：[https://developer.android.com/training/basics/firstapp/starting-activity.html#RespondToButton](https://developer.android.com/training/basics/firstapp/starting-activity.html#RespondToButton "https://developer.android.com/training/basics/firstapp/starting-activity.html#RespondToButton")
+
