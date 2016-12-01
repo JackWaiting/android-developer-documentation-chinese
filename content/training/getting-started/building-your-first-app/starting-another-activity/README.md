@@ -152,8 +152,8 @@ activity_display_message.xml 并将属性 android:id="@+id/activity_display_mess
 
 备注：
 
-翻译：JackWaiting
+翻译：JackWaiting[
 [https://github.com/JackWaiting](https://github.com/JackWaiting "JackWaiting")
-
+]
 原始文：[https://developer.android.com/training/basics/firstapp/starting-activity.html#RespondToButton](https://developer.android.com/training/basics/firstapp/starting-activity.html#RespondToButton "https://developer.android.com/training/basics/firstapp/starting-activity.html#RespondToButton")
 
