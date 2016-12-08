@@ -12,7 +12,19 @@
        * [适配不同的屏幕](develop/training/getting-started/supporting-different-devices/supporting-different-screens/README.md)
        * [适配不同的系统版本](develop/training/getting-started/supporting-different-devices/supporting-different-platform-versions/README.md)
        
+   * [管理 Activity 的生命周期](develop/training/getting-started/managing-the-activity-lifecycle/README.md)
+       * [启动 Activity](develop/training/getting-started/managing-the-activity-lifecycle/starting-an-activity/README.md)
+       * [暂停和继续 Activity](develop/training/getting-started/managing-the-activity-lifecycle/pausing-and-resuming-an-activity/README.md)
+       * [停止和重启 Activity](develop/training/getting-started/managing-the-activity-lifecycle/stopping-and-restarting-an-activity/README.md)
+       * [重新创建 Activity](develop/training/getting-started/managing-the-activity-lifecycle/recreating-an-activity/README.md)
        
+   * [使用 Fragment 构建动态的 UI](develop/training/getting-started/building-a-dynamic-ui-with-fragments/README.md)
+       * [创建一个 Fragment](develop/training/getting-started/building-a-dynamic-ui-with-fragments/creating-a-fragment/README.md)
+       * [构建灵活的 UI](develop/training/getting-started/building-a-dynamic-ui-with-fragments/building-a-flexible-ui/README.md)
+       * [Fragments 之间的交互](develop/training/getting-started/building-a-dynamic-ui-with-fragments/communicating-with-other-fragments/README.md)
+       
+       
+
        
        
        
