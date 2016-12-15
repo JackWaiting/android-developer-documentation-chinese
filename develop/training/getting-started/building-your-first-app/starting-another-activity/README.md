@@ -157,3 +157,4 @@ activity_display_message.xml 并将属性 android:id="@+id/activity_display_mess
 
 原始文：[https://developer.android.com/training/basics/firstapp/starting-activity.html#RespondToButton](https://developer.android.com/training/basics/firstapp/starting-activity.html#RespondToButton "https://developer.android.com/training/basics/firstapp/starting-activity.html#RespondToButton")
 
+aaaaaaaa
