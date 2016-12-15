@@ -78,6 +78,7 @@ public class MainActivity extends FragmentActivity {
 如果使用 [v7 appcompat library](https://developer.android.com/tools/support-library/features.html#v7-appcompat)，应该使 activity 继承 [AppCompatActivity](https://developer.android.com/reference/android/support/v7/app/AppCompatActivity.html)，它是 FragmentActivity 的子类。更多信息请参阅 [Adding the App Bar](https://developer.android.com/training/appbar/index.html)。
 
 >**注**:当通过定义 XML 布局文件在 activity 中添加一个 fragment 时，你不能动态的移除 fragment。如果想在用户交互时对 fragment 进行切入和切出，必须在 activity 第一次启动时就把 fragment 添加进来，这些将在下节课讲解。
-
+    
+    
 >翻译：[@misparking](https://github.com/misparking)    
 原始文档：<https://developer.android.com/training/basics/fragments/creating.html>
