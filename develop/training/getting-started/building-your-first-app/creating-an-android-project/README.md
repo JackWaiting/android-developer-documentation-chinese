@@ -1,4 +1,4 @@
-#创建Android应用
+#创建Android项目
 
 这篇课程将会告诉你如何使用Android Studio创建新的Android项目和介绍项目中的一些文件。
 
