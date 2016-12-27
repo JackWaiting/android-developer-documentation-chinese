@@ -23,7 +23,15 @@
        * [构建灵活的 UI](develop/training/getting-started/building-a-dynamic-ui-with-fragments/building-a-flexible-ui/README.md)
        * [Fragments 之间的交互](develop/training/getting-started/building-a-dynamic-ui-with-fragments/communicating-with-other-fragments/README.md)
        
+   * [数据保存](develop/training/getting-started/saving-data/README.md)
+       * [保存键值集](develop/training/getting-started/saving-data/saving-key-value-sets/README.md)
+       * [保存文件](develop/training/getting-started/saving-data/saving-files/README.md)
+       * [在数据库中保存数据](develop/training/getting-started/saving-data/saving-data-in-sql-databases/README.md)
        
+   * [与其他应用交互](develop/training/getting-started/interacting-with-other-apps/README.md)
+       * [使用户跳转到其他应用](develop/training/getting-started/interacting-with-other-apps/sending-the-user-to-another-app/README.md)
+       * [获取 activity 返回的结果](develop/training/getting-started/interacting-with-other-apps/getting-a-result-from-the-activity/README.md)
+       * [允许一个应用启动另一个应用](develop/training/getting-started/interacting-with-other-apps/allowing-other-apps-to-start-your-activity/README.md)     
 
        
        
