@@ -2,7 +2,7 @@
 
 ## 保存键值对
 
-如果你需要保存较少的键值对集合，那么你可以使用 [SharedPreferences](https://developer.android.google.cn/reference/android/content/SharedPreferences.html) 的 API。 每个 SharedPreferences 对象会对应一个键值对文件，并且提供了简单的方法去读写它们。每个 SharedPreferences 被 Framework 管理，能够设置为私有的或公开的。   
+如果你需要保存较小的键值对集合，那么你可以使用 [SharedPreferences](https://developer.android.google.cn/reference/android/content/SharedPreferences.html) 的 API。 每个 SharedPreferences 对象会对应一个键值对文件，并且提供了简单的方法去读写它们。每个 SharedPreferences 被 Framework 管理，能够设置为私有的或公开的。   
 
 这一课将讲解用 SharedPreferences 的 API 如何存储和恢复简单类型的值。
 
@@ -35,7 +35,7 @@
 > 注意：如果你创建的 SharedPreferences 文件是 [MODE_WORLD_READABLE](https://developer.android.google.cn/reference/android/content/Context.html#MODE_WORLD_READABLE) 或 [MODE_WORLD_WRITEABLE](https://developer.android.google.cn/reference/android/content/Context.html#MODE_WORLD_WRITEABLE) 模式，那么任何一个其它的应用只要知道你的标识名都能访问数据。   
 
 
-### 写 SharedPreferences 文件
+### 写 SharedPreferences 信息
 
 在写 SharedPreferences 文件时，需要通过 [edit()](https://developer.android.google.cn/reference/android/content/SharedPreferences.html#edit()) 方法创建 [SharedPreferences.Editor](https://developer.android.google.cn/reference/android/content/SharedPreferences.Editor.html) 对象。   
 
@@ -47,7 +47,7 @@
 	editor.commit();
 
 
-### 读 SharedPreferences 文件
+### 读 SharedPreferences 信息
 
 从 SharedPreferences 文件中读取数据时，调用如 [getInt()](https://developer.android.google.cn/reference/android/content/SharedPreferences.html#getInt(java.lang.String,int)) 或 [getString()](https://developer.android.google.cn/reference/android/content/SharedPreferences.html#getString(java.lang.String,java.lang.String)) 等方法，传一个你需要值的键，再传一个默认的值作为该键不存在时结果，如：   
 
