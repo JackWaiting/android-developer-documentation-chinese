@@ -52,8 +52,6 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 在这个例子中，由 Android 联系人应用返回的包含结果的 [Intent](https://developer.android.com/reference/android/content/Intent.html) 提供了可以标记用户选择的联系人的内容 [Uri](https://developer.android.com/reference/android/net/Uri.html)。
 
-In order to successfully handle the result, you must understand what the format of the result Intent will be. Doing so is easy when the activity returning a result is one of your own activities. Apps included with the Android platform offer their own APIs that you can count on for specific result data. For instance, the People app always returns a result with the content URI that identifies the selected contact, and the Camera app returns a Bitmap in the "data" extra (see the class about Capturing Photos).
-
 为了能够成功处理结果，你必须知道 [Intent](https://developer.android.com/reference/android/content/Intent.html) 结果的格式是什么。做到这一点，比较简单，只要 Acitivty 返回的结果是你自己 Activity 的。Android 平台的应用提供了他们自己的 API 能够让你处理指定的结果数据。例如，联系人应用总会返回一个带有能够识别所选联系人的内容 URI 的结果，相机应用会返回包含一个 [Bitmap](https://developer.android.com/reference/android/graphics/Bitmap.html) 对象的数据（参考类[拍摄照片](https://developer.android.com/training/camera/index.html)）。
 
 ###追加：读取联系人数据
