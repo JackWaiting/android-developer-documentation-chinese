@@ -1,6 +1,4 @@
-# 
-
-#运行你的App#
+# 运行你的 App
 
 在[上一课](https://developer.android.com/training/basics/firstapp/creating-project.html)，我们创建了一个“Hello World”的项目。现在运行App在真机或模拟器上，如果你还没有一个真机，请直接看 [在模拟器上运行](#2)。
 
