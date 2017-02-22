@@ -116,4 +116,4 @@
 
 >**备注:**  
 >翻译 ：[@jarylan](https://github.com/jarylan)  
->原始文档:[https://developer.android.com/training/basics/data-storage/files.html](https://developer.android.com/training/basics/data-storage/files.html)
+>原始文档:[https://developer.android.com/training/permissions/requesting.html](https://developer.android.com/training/permissions/requesting.html)
