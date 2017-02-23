@@ -1,26 +1,26 @@
-#创建Android项目
+#创建 Android 项目
 
 这篇课程将会告诉你如何使用Android Studio创建新的Android项目和介绍项目中的一些文件。
 
-## 1.在Android Studio中，创建新的项目
+## 1.在 Android Studio 中，创建新的项目
 * 如果你未打开任何项目，请在Weclome to Android Studio的窗口中，点击Start a new Android Studio project
 * 如果你已打开项目，请选择File > New Project
 
-## 2.在New Project输入以下内容
+## 2.在 New Project 输入以下内容
 * Application Name: "My First App"
 * Company Domain："example.com"
 <br>Android Studio 会为你提供默认的软件包名称和项目位置， 但您也可根据需求去编辑这些内容
 
-## 3.点击Next
+## 3.点击 Next
 
-## 4.在Target Android Devices 屏幕中，保留默认并点击 Next。
+## 4.在 Target Android Devices 屏幕中，保留默认并点击 Next。
    Minimum Required SDK 是指您的应用所能支持的最低 Android 版本，由API级别表示。为了能支持尽可能多的设备，您应该设置成可让你的应用提供核心功能可用的最低版本。 如果应用的任何功能只能在更新版本的 Android上运行，并且不属于核心功能集的关键功能，则可仅当在支持该功能的版本上运行时启用该功能（请参阅[支持不同平台版本](https://android.developerdocumentation.cn/develop/training/getting-started/supporting-different-devices/supporting-different-platform-versions/index.html)）。
    
-## 5.在Add an Activity to Mobile屏幕中，选择Empty Activity，然后点击 Next。
+## 5.在 Add an Activity to Mobile 屏幕中，选择 Empty Activity，然后点击 Next。
 
-## 6.在Customize the Activity 屏幕中，保留默认值并点击Finish。
+## 6.在 Customize the Activity 屏幕中，保留默认值并点击Finish。
 
-经过一些处理后,Android Studio将打开并显示包含默认文件的"Hello World"应用。在以下课程中，你将向其中一些文件添加功能。
+经过一些处理后,Android Studio 将打开并显示包含默认文件的"Hello World"应用。在以下课程中，你将向其中一些文件添加功能。
 
 下面让我们花一点时间回顾一下最重要的文件：首先，请确保已打开 Project 窗口（选择 `View > Tool Windows > Project`），并从顶部的下拉列表中选择 Android 视图。随后，您可以看到下列文件：
 
