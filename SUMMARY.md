@@ -41,7 +41,7 @@
 
 * [应用内容分享](develop/training/building-apps-with-content-sharing/README.md)
    * [分享简单的数据](develop/training/building-apps-with-content-sharing/sharing-simple-data/README.md)
-       * [给其他应用发送简单的数据](develop/training/building-apps-with-content-sharing/sharing-simple-data/sending-simple-data-to-other-apps.md)
+       * [向其他应用发送简单的数据](develop/training/building-apps-with-content-sharing/sharing-simple-data/sending-simple-data-to-other-apps.md)
        * [接收从其他应用发送的数据](develop/training/building-apps-with-content-sharing/sharing-simple-data/receiving-simple-data-from-other-apps.md)
        * [增加简单的分享功能](develop/training/building-apps-with-content-sharing/sharing-simple-data/adding-an-easy-share-action.md)  
    
