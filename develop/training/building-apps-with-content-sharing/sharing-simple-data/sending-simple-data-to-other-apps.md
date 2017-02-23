@@ -53,7 +53,7 @@ shareIntent.setType("image/jpeg");
 startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.send_to)));
 ```
 请注意以下内容：
-
+I
 * 我们可以使用  \*/*  这样的方式来指定 MIME 类型，但是这仅仅会匹配到那些能够处理一般数据类型的Activity(即一般的 Activity 无法详尽所有的MIME类型)
  
 * 接收的程序需要有访问URI资源的权限。下面有一些方法来处理这个问题：
@@ -69,7 +69,7 @@ startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.
 ArrayList<Uri> imageUris = new ArrayList<Uri>();
 imageUris.add(imageUri1); // Add your image URIs here
 imageUris.add(imageUri2);
-
+I
 Intent shareIntent = new Intent();
 shareIntent.setAction(Intent.ACTION_SEND_MULTIPLE);
 shareIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, imageUris);
@@ -77,3 +77,7 @@ shareIntent.setType("image/*");
 startActivity(Intent.createChooser(shareIntent, "Share images to.."));
 ```
 当然，请确保指定到数据的URIs能够被接收程序所访问(添加访问权限)。
+
+
+>翻译：[@misparking](https://github.com/misparking)    
+原始文档：<https://developer.android.google.cn/training/sharing/send.html>
