@@ -81,4 +81,59 @@ boolean isIntentSafe = activities.size() > 0;
 如果 isIntentSafe 是 true，则至少有一个应用将响应该 Intent。 如果它是 false，则没有任何应用处理该 Intent。
 >**注：**我们必须在第一次使用之前做这个检查，若是不可行，则应该关闭这个功能。如果知道某个确切的应用能够处理这个 Intent，我们也可以向用户提供下载该应用的链接。(请参阅如何[在 Google Play 链接产品](https://developer.android.google.cn/distribute/tools/promote/linking.html)).
 
+##启动具有 Intent 的 Activity
+一旦您已创建您的 Intent 并设置 extra 信息，调用 startActivity() 将其发送给系统。如果系统识别可处理 Intent 的多个 Activity，它会为用户显示对话框供其选择要使用的应用，如图 1所示。
+![image](intents-choice.png)  
+　　　　　　**图1**    
+  
+如果只有一个 Activity 处理 Intent，系统会立即将其启动。
+    
+    startActivity(intent);
+此处显示完整的示例：如何创建查看地图的 Intent，验证是否存在处理 Intent 的应用，然后启动它：
+
+```java
+// Build the intent
+Uri location = Uri.parse("geo:0,0?q=1600+Amphitheatre+Parkway,+Mountain+View,+California");
+Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
+
+// Verify it resolves
+PackageManager packageManager = getPackageManager();
+List<ResolveInfo> activities = packageManager.queryIntentActivities(mapIntent, 0);
+boolean isIntentSafe = activities.size() > 0;
+
+// Start an activity if it's safe
+if (isIntentSafe) {
+    startActivity(mapIntent);
+}
+
+```
+##显示应用选择器
+注意，当您通过将您的 Intent 传递至 startActivity() 而启动 Activity 时，有多个应用响应 Intent，用户可以选择默认使用哪个应用（通过选中对话框底部的复选框；见图 1）。当执行用户通常希望每次使用相同应用进行的操作时，比如当打开网页（用户可能只使用一个网络浏览器）或拍照（用户可能习惯使用一个相机）时，这非常有用。
+
+但是，如果要执行的操作可由多个应用处理并且用户可能 习惯于每次选择不同的应用 — 比如“共享”操作， 用户有多个应用分享项目 — 您应明确显示选择器对话框， 如图 2 所示。选择器对话框 强制用户选择用于每次操作的 应用（用户不能对此操作选择默认的应用）。    
+
+![image](intent-chooser.png)  
+　　　　　　**图2**    
+  
+要显示选择器，请使用 [createChooser()](https://developer.android.google.cn/reference/android/content/Intent.html#createChooser(android.content.Intent, java.lang.CharSequence)) 创建Intent 并将其传递给 startActivity()。例如：
+
+```java
+Intent intent = new Intent(Intent.ACTION_SEND);
+...
+
+// Always use string resources for UI text.
+// This says something like "Share this photo with"
+String title = getResources().getString(R.string.chooser_title);
+// Create intent to show chooser
+Intent chooser = Intent.createChooser(intent, title);
+
+// Verify the intent will resolve to at least one activity
+if (intent.resolveActivity(getPackageManager()) != null) {
+    startActivity(chooser);
+}
+```
+这将显示一个对话框，其中包含响应传递给 createChooser() 方法的 Intent 的应用列表，并且将提供的文本用作对话框标题。
+
+>翻译：[@misparking](https://github.com/misparking)    
+原始文档：<https://developer.android.google.cn/training/basics/intents/sending.html#StartActivity>
 
