@@ -60,3 +60,5 @@
     ...
 
 ```
+>翻译：[@misparking](https://github.com/misparking)    
+原始文档：<https://developer.android.google.cn/training/secure-file-sharing/retrieve-info.html>
