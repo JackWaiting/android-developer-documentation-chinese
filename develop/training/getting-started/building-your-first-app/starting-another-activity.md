@@ -1,4 +1,4 @@
-#启动另一个 Activity
+# 启动另一个 Activity
 
 完成上一课的学习后，您已构建了一个显示一个 Activity（单一屏幕）并带有一个文本字段和一个按钮的应用。 在本课中，您将为 MainActivity 添加一些代码，这些代码可在用户点击“Send”按钮时启动一个新的 Activity。
 
