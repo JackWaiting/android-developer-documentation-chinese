@@ -1,12 +1,12 @@
 #从 Activity 获取结果
 
-启动另外一个 Activity 的方式，并不是单向的。你也可以启动另外一个 Activity ，并且接收一个返回结果。可以通过调用 [startActivityForResult()](https://developer.android.com/reference/android/app/Activity.html#startActivityForResult(android.content.Intent, int))（而不是调用[startActivity()](https://developer.android.com/reference/android/app/Activity.html#startActivity(android.content.Intent))）。
+启动另外一个 Activity 的方式，并不一定是单向的。你也可以启动另外一个 Activity ，并且接收一个返回结果。可以通过调用 [startActivityForResult()](https://developer.android.com/reference/android/app/Activity.html#startActivityForResult(android.content.Intent, int))（而不是调用[startActivity()](https://developer.android.com/reference/android/app/Activity.html#startActivity(android.content.Intent))）。
 
 例如，你的应用可以启动一个相机应用，并且接收一个诸如拍摄的照片的结果。你也可以启动一个通讯录应用来让用户选择一个联系人，然后返回一个联系人细节信息的结果。
 
 当然，能够响应的 Activity 必须被设计成能够返回结果的。这样，它会将结果以 Intent 对象来返回。你的 Activity 在 [onActivityResult()](https://developer.android.com/reference/android/app/Activity.html#onActivityResult(int, int, android.content.Intent)) 回调方法中接收结果。
 
-> **备注：**你可以在调用 [startActivityForResult()](https://developer.android.com/reference/android/app/Activity.html#startActivityForResult(android.content.Intent, int)) ，可以使用显式或引式 Intent。当启动一个你自己的 Activity 来接收一个结果的时候，你可以使用显式 Intent 来确保你可以接收到期望的结果。
+> **备注：**你可以在调用 [startActivityForResult()](https://developer.android.com/reference/android/app/Activity.html#startActivityForResult(android.content.Intent, int)) ，可以使用显式或隐式 Intent。当启动一个你自己的 Activity 来接收一个结果的时候，你可以使用显式 Intent 来确保你可以接收到期望的结果。
 
 ##启动 Activity
 
@@ -29,11 +29,13 @@ private void pickContact() {
 ##接收结果
 
 当用户在随后的 Activity 中完成操作并且返回之后，系统会调用你的 Activity 的 [onActivityResult()](https://developer.android.com/reference/android/app/Activity.html#onActivityResult(int, int, android.content.Intent)) 方法。这个方法包含三个参数：  
-* 你之前传给 [startActivityForResult()](https://developer.android.com/reference/android/app/Activity.html#startActivityForResult(android.content.Intent, int)) 方法的请求码。
+
+* 你之前传给 [startActivityForResult()](https://developer.android.com/reference/android/app/Activity.html#startActivityForResult(android.content.Intent, int)) 方法的请求码。    
 * 通过第二个 Activity 指定的结果码。结果码要么是 [RESULT_OK](https://developer.android.com/reference/android/app/Activity.html#RESULT_OK)，表示操作成功。或者是 [RESULT_CANCELED](https://developer.android.com/reference/android/app/Activity.html#RESULT_CANCELED)，表示用户回退或者由于某些原因操作失败了。
 * 携带结果数据的[Intent](https://developer.android.com/reference/android/content/Intent.html) 。
 
-例如，下面是一个你可以处理“选择联系人” Intent 的结果：  
+例如，下面是一个你可以处理“选择联系人” Intent 的结果： 
+ 
 ```Java
 @Override
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -90,7 +92,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 ```
 
 
->备注：在 Android 2.3 （API level 9）之前，查询联系人数据要求你的应用声明 [READ_CONTACTS](https://developer.android.com/reference/android/Manifest.permission.html#READ_CONTACTS) 的权限（参见[安全和权限](https://developer.android.com/guide/topics/security/security.html)）。然而从 Android 2.3 开始，联系人应用允许你的应用有一个读取联系人结果数据的临时权限。这个临时的权限之恩给你让你请求指定的联系人，所以当你没有声明 [READ_CONTACTS](https://developer.android.com/reference/android/Manifest.permission.html#READ_CONTACTS) 权限的时候，你就不能通过 Intent 中的 [Uri](https://developer.android.com/reference/android/net/Uri.html) 来查询超过一个联系人的数据。
+>备注：在 Android 2.3 （API level 9）之前，通过 [Contacts Provider](https://developer.android.google.cn/reference/android/provider/ContactsContract.Contacts.html) 执行查询时(如上面代码所示)需要你的应用声明 [READ_CONTACTS](https://developer.android.com/reference/android/Manifest.permission.html#READ_CONTACTS) 的权限（参见[安全和权限](https://developer.android.com/guide/topics/security/security.html)）。然而从 Android 2.3 开始，联系人应用允许你的应用有一个读取联系人结果数据的临时权限。这个临时的权限仅适用于所请求的特定联系人，所以当你没有声明 [READ_CONTACTS](https://developer.android.com/reference/android/Manifest.permission.html#READ_CONTACTS) 权限的时候，就只能通过 Intent 中的 [Uri](https://developer.android.com/reference/android/net/Uri.html) 来查询特定联系人的数据。
 
 
 
