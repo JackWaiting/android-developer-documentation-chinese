@@ -59,6 +59,7 @@
     ...
 
 ```
+
 >翻译：[@misparking](https://github.com/misparking)   
 >校对：[@ifeegoo](https://github.com/ifeegoo)  
 >原始文档：<https://developer.android.google.cn/training/secure-file-sharing/retrieve-info.html>  
