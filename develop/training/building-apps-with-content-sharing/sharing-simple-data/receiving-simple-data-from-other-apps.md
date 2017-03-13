@@ -85,6 +85,9 @@ void handleSendMultipleImages(Intent intent) {
 
 更新 UI 可以像填充 [EditText](https://developer.android.com/reference/android/widget/EditText.html) 一样简单，也可以是更加复杂一点的操作，例如过滤出感兴趣的图片。这个完全取决于应用接下来要做些什么。
 
+>翻译：[@ifeegoo](https://github.com/ifeegoo)  
+>校对：[@misparking](https://github.com/misparking)   
+>原始文档：<https://developer.android.google.cn/training/sharing/receive.html>  
 
 
 
