@@ -7,13 +7,13 @@
 
 ##接收文件请求
 
-要从客户端应用程序接收文件请求并使用内容 URI 进行响应，你的应用程序应提供文件选择活动。 客户端应用程序通过使用包含操作 [ACTION_PICK](https://developer.android.google.cn/reference/android/content/Intent.html#ACTION_PICK) 的 Intent 调用 [startActivityForResult（）](https://developer.android.google.cn/reference/android/app/Activity.html#startActivityForResult)来启动此 [Activity](https://developer.android.google.cn/reference/android/app/Activity.html)。 当客户端应用调用 [startActivityForResult（）](https://developer.android.google.cn/reference/android/app/Activity.html#startActivityForResult) 时，你的应用可以以用户选择的文件的内容 URI 的形式向客户端应用返回结果。
+要从客户端应用程序接收文件请求并使用内容 URI 进行响应，你的应用程序应提供文件选择 Activity。 客户端应用程序通过使用包含操作 [ACTION_PICK](https://developer.android.google.cn/reference/android/content/Intent.html#ACTION_PICK) 的 Intent 调用 [startActivityForResult（）](https://developer.android.google.cn/reference/android/app/Activity.html#startActivityForResult)来启动此 [Activity](https://developer.android.google.cn/reference/android/app/Activity.html)。 当客户端应用调用 [startActivityForResult（）](https://developer.android.google.cn/reference/android/app/Activity.html#startActivityForResult) 时，你的应用会返回用户选择文件的 URI 地址。
 
 要了解如何在客户端应用程序中实现文件请求，请参阅请求共享文件中的课程。
 
 ##创建文件选择的 Activity
 
-要设置文件选择 [Activity](https://developer.android.google.cn/reference/android/app/Activity.html)，请首先在清单中指定活动，以及与操作 [ACTION_PICK](https://developer.android.google.cn/reference/android/content/Intent.html#ACTION_PICK) 和类别 [CATEGORY_DEFAULT](https://developer.android.google.cn/reference/android/content/Intent.html#CATEGORY_DEFAULT) 和 [CATEGORY_OPENABLE](https://developer.android.google.cn/reference/android/content/Intent.html#CATEGORY_OPENABLE) 匹配的意图过滤器。 还要为你的应用为其他应用提供的文件添加 MIME 类型过滤器。 以下代码段显示如何指定新的活动和意向过滤器：
+要创建文件选择的 [Activity](https://developer.android.google.cn/reference/android/app/Activity.html)，请首先在清单中指定 Activity，以及与操作 [ACTION_PICK](https://developer.android.google.cn/reference/android/content/Intent.html#ACTION_PICK) 和类别 [CATEGORY_DEFAULT](https://developer.android.google.cn/reference/android/content/Intent.html#CATEGORY_DEFAULT) 和 [CATEGORY_OPENABLE](https://developer.android.google.cn/reference/android/content/Intent.html#CATEGORY_OPENABLE) 匹配的意图过滤器。 还要为你的应用为其他应用提供的文件添加 MIME 类型过滤器。 以下代码段显示如何指定新的 Activity 和意向过滤器：
 
 	<manifest xmlns:android="http://schemas.android.com/apk/res/android">
     ...
@@ -79,13 +79,13 @@
 
 当使用意图将文件的 URI 从一个应用程序发送到另一个应用程序时，你必须小心获取其他应用程序可以读取的 URI。 在运行 Android 6.0（API级别23）及更高版本的设备上执行此操作时需要特别注意，因为该版本 Android 中的权限模型发生了更改，特别是 [READ_EXTERNAL_STORAGE](https://developer.android.google.cn/reference/android/Manifest.permission.html#READ_EXTERNAL_STORAGE) 已成为危险权限，接收应用可能缺少此权限。
 
-考虑到这些考虑，我们建议你避免使用 [Uri.fromFile（）](https://developer.android.google.cn/reference/android/net/Uri.html#fromFile(java.io.File))，这存在一些缺点。 这种方法：
+考虑到这些因素，我们建议你避免使用 [Uri.fromFile（）](https://developer.android.google.cn/reference/android/net/Uri.html#fromFile(java.io.File))，这存在一些缺点。 这种方法：
 
 * 不允许在配置文件之间共享文件。
-* 要求你的应用程式在执行 Android 4.4（API等级19）或更低版本的装置上，拥有 [WRITE_EXTERNAL_STORAGE](https://developer.android.google.cn/reference/android/Manifest.permission.html#WRITE_EXTERNAL_STORAGE) 权限。
-* 要求接收应用程式具有 [WRITE_EXTERNAL_STORAGE](https://developer.android.google.cn/reference/android/Manifest.permission.html#WRITE_EXTERNAL_STORAGE) 权限，在没有这项权限的重要分享目标（例如 Gmail ）上，这项权限会失效。
+* 要求你的应用拥有 [WRITE_EXTERNAL_STORAGE](https://developer.android.google.cn/reference/android/Manifest.permission.html#WRITE_EXTERNAL_STORAGE) 权限，当执行在 Android 4.4（API等级19）或更低版本的系统上。
+* 要求接收应用具有 [READ_EXTERNAL_STORAGE](https://developer.android.com/reference/android/Manifest.permission.html#READ_EXTERNAL_STORAGE) 权限，在没有这项权限的重要应用（例如 Gmail ）上，请求将会失败。
 
-而不是使用 [Uri.fromFile（）](https://developer.android.google.cn/reference/android/net/Uri.html#fromFile(java.io.File))，你可以使用 URI 权限授予其他应用程序访问特定的 URI。尽管 URI 权限对由 [Uri.fromFile（）](https://developer.android.google.cn/reference/android/net/Uri.html#fromFile(java.io.File)) 生成的 file：// URI 不起作用，但它们在与内容提供者相关联的 URI 上工作。 FileProvider API 可以帮助你创建此类 URI。此方法也适用于不在外部存储中的文件，但在发送意图的应用程序的本地存储中。
+替代 [Uri.fromFile（）](https://developer.android.google.cn/reference/android/net/Uri.html#fromFile(java.io.File))，你可以使用 URI 权限授予其他应用程序访问特定的 URI。尽管 URI 权限对由 [Uri.fromFile（）](https://developer.android.google.cn/reference/android/net/Uri.html#fromFile(java.io.File)) 生成的 file：// URI 不起作用，但它们在与内容提供者相关联的 URI 上工作。 FileProvider API 可以帮助你创建此类 URI。此方法也适用于不在外部存储中的文件，但在发送意图的应用程序的本地存储中。
 
 在 onItemClick（）中，为所选文件的文件名获取 File 对象，并将其作为参数传递给 getUriForFile（），以及在 FileProvider 的 [&lt;provider&gt;](https://developer.android.google.cn/guide/topics/manifest/provider-element.html) 元素中指定的权限。结果内容 URI 包含权限，对应于文件目录（如 XML 元数据中指定的）的路径段以及包括其扩展名的文件的名称。 [FileProvider](https://developer.android.google.cn/reference/android/support/v4/content/FileProvider.html) 如何将目录映射到基于 XML 元数据的路径段，请参阅指定可分享目录一节。
 
@@ -132,10 +132,10 @@
         ...
     }
 
-请记住，您只能为驻留在包含<路径>元素的元数据文件中指定的目录中的文件生成内容 URI，如指定可分享目录一节中所述。 如果对未指定的路径中的文件调用 getUriForFile（），则会收到 [IllegalArgumentException](https://developer.android.google.cn/reference/java/lang/IllegalArgumentException.html)。
+请记住，您只能为驻留在包含 < path > 元素的元数据文件中指定的目录中的文件生成内容 URI，如指定可分享目录一节中所述。 如果对未指定的路径中的文件调用 getUriForFile（），则会收到 [IllegalArgumentException](https://developer.android.google.cn/reference/java/lang/IllegalArgumentException.html)。
 
 ##授予文件权限
-现在您要与其他应用程式共用的档案有内容 URI，您必须允许客户端应用程式存取该档案。 要允许访问，通过将内容 URI 添加到 [Intent](https://developer.android.google.cn/reference/android/content/Intent.html)，然后在 Intent 上设置权限标志，向客户端应用程序授予权限。 您授予的权限是临时的，并在接收应用程序的任务堆栈完成时自动过期。
+现在你有要分享到另外一个应用的文件 URI 地址，你需要允许客户端应用能访问这个文件。 要允许访问，通过将内容 URI 添加到 [Intent](https://developer.android.google.cn/reference/android/content/Intent.html)，然后在 Intent 上设置权限标志，向客户端应用程序授予权限。 您授予的权限是临时的，并在接收应用程序的任务堆栈完成时自动过期。
 
 以下代码段显示如何为文件设置读取权限：
 
@@ -209,5 +209,6 @@
 
 
 >**备注**  
-翻译:  [@jarylan](https://github.com/jarylan)  
+翻译：[@jarylan](https://github.com/jarylan)    
+校对：[@iOnesmile](https://github.com/iOnesmile)    
 原始文档:  [https://developer.android.com/training/secure-file-sharing/share-file.html](https://developer.android.com/training/secure-file-sharing/share-file.html)
