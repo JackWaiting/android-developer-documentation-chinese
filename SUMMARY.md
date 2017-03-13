@@ -54,5 +54,13 @@
    * [使用 NFC 分享文件](develop/training/building-apps-with-content-sharing/sharing-files-with-nfc/README.md)
        * [发送文件到其他设备](develop/training/building-apps-with-content-sharing/sharing-files-with-nfc/sending-files-to-another-device.md)
        * [从其他设备接收文件](develop/training/building-apps-with-content-sharing/sharing-files-with-nfc/receiving-files-from-another-device.md)
-   
-
+       
+* [多媒体构建应用](develop/training/building-apps-with-multimedia/README.md)
+   * [拍照](develop/training/building-apps-with-multimedia/capturing-photos/README.md)
+       * [简单拍照](develop/training/building-apps-with-multimedia/capturing-photos/taking-photos-simply.md)
+       * [简单录像](develop/training/building-apps-with-multimedia/capturing-photos/recording-videos-simply.md)
+       * [控制相机](develop/training/building-apps-with-multimedia/capturing-photos/controlling-the-camera.md)
+  * [打印内容](develop/training/building-apps-with-multimedia/printing-content/README.md)
+       * [打印照片](develop/training/building-apps-with-multimedia/printing-content/printing-a-photo.md)
+       * [打印 HTML 文档](develop/training/building-apps-with-multimedia/printing-content/printing-an-html-document.md)
+       * [打印自定义文档](develop/training/building-apps-with-multimedia/printing-content/printing-a-custom-document.md)
