@@ -60,7 +60,7 @@
        * [简单拍照](develop/training/building-apps-with-multimedia/capturing-photos/taking-photos-simply.md)
        * [简单录像](develop/training/building-apps-with-multimedia/capturing-photos/recording-videos-simply.md)
        * [控制相机](develop/training/building-apps-with-multimedia/capturing-photos/controlling-the-camera.md)
-  * [打印内容](develop/training/building-apps-with-multimedia/printing-content/README.md)
+   * [打印内容](develop/training/building-apps-with-multimedia/printing-content/README.md)
        * [打印照片](develop/training/building-apps-with-multimedia/printing-content/printing-a-photo.md)
        * [打印 HTML 文档](develop/training/building-apps-with-multimedia/printing-content/printing-an-html-document.md)
        * [打印自定义文档](develop/training/building-apps-with-multimedia/printing-content/printing-a-custom-document.md)
