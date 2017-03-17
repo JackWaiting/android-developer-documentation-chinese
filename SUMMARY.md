@@ -64,3 +64,11 @@
        * [打印照片](develop/training/building-apps-with-multimedia/printing-content/printing-a-photo.md)
        * [打印 HTML 文档](develop/training/building-apps-with-multimedia/printing-content/printing-an-html-document.md)
        * [打印自定义文档](develop/training/building-apps-with-multimedia/printing-content/printing-a-custom-document.md)
+      
+* [API 指南]()
+   * [UI 指南](develop/api-guides/ui-guidelines/README.md)
+       * [图标设计指南](develop/api-guides/ui-guidelines/icon-design-guidelines/README.md)
+  * [启动器图标]()
+       * [..]()
+       * [..]()
+       * [..]()
