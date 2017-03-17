@@ -1,6 +1,6 @@
 #从其他应用接收简单数据
 
-如同你的应用可以向其他应用发送数据一样，你的应用也可以很容易的从其他应用接收数据。思考下用户如何和你的应用进行交互，以及你想要从其他应用获取数据的类型。例如，社交网络类的应用更倾向于接收文本内容，从另外一个应用获取诸如网页 URL 的数据。[Google+ Android 应用](https://play.google.com/store/apps/details?id=com.google.android.apps.plus)既接收文本信息，*又*接收单张或多张图片。通过这个应用，用户可以很容易的在 Google+ 中发布从 Android 图片应用中获取的图片。
+如同你的应用可以向其他应用发送数据一样，你的应用也可以很容易的从其他应用接收数据。思考下用户如何和你的应用进行交互，以及你想要从其他应用获取数据的类型。例如，社交网络类的应用更倾向于接收文本内容，从另外一个应用获取诸如网页 URL 的数据。[Google+ Android 应用](https://play.google.com/store/apps/details?id=com.google.android.apps.plus)既接收文本信息，又可以接收单张或多张图片。通过这个应用，用户可以很容易的在 Google+ 中发布从 Android 图片应用中获取的图片。
 
 ##更新你的 Manifest 文件
 
@@ -32,8 +32,8 @@
 
 ##处理接收的内容
 
-要处理通过一个 [Intent(https://developer.android.com/reference/android/content/Intent.html)] 传送的内容，先通过调用 [getIntent()](https://developer.android.com/reference/android/content/Intent.html#getIntent(java.lang.String)) 方法来获取 [Intent(https://developer.android.com/reference/android/content/Intent.html)] 对象。一旦你拥有了这个对象，你就可以判断它的内容来决定下一步做什么。要注意的就是如果这个 Activity 可以被系统的其他部分启动的话，例如启动器，你需要在检查意图的时候，考虑这种情况。
-
+要处理 [Intent](https://developer.android.com/reference/android/content/Intent.html) 传送的内容，需要先通过调用 [getIntent()](https://developer.android.com/reference/android/content/Intent.html#getIntent(java.lang.String)) 方法来获取 [Intent](https://developer.android.com/reference/android/content/Intent.html) 对象。一旦你拥有了这个对象，你就可以判断它的内容来决定下一步做什么。要注意的就是如果这个 Activity 可以被系统的其他部分启动的话，例如一个 launcher，需要在检查 intent 的时候考虑这种情况。
+Keep in mind that if this activity can be started from other parts of the system, such as the launcher, then you will need to take this into consideration when examining the intent.
 ```Java
 void onCreate (Bundle savedInstanceState) {
     ...
@@ -80,10 +80,14 @@ void handleSendMultipleImages(Intent intent) {
 }
 ```
 
->**注意：**一定要格外检查接收的数据，你永远不知道其他应用可能给你发的数据。例如，可能会设置错误的 MIME 类型，或者发送的图片可能会非常大。所以，请在单独的线程中处理二进制数据，而不是在主线程（UI）中处理。
+>**注意：**一定要格外检查接收的数据，你无法知道其他应用可能给你发送的数据类型。比如，可能会设置错误的 MIME 类型，或者过大的图片。因此我们应避免在 UI 线程里面去处理那些获取到的数据。
 
-更新 UI 可能和填充 [EditText](https://developer.android.com/reference/android/widget/EditText.html) 一样简单，也有可能和给一张图片加一个有趣的图片过滤器一样负责。这个真的取决于你的应用接下来要做什么。
 
+更新 UI 可以像填充 [EditText](https://developer.android.com/reference/android/widget/EditText.html) 一样简单，也可以是更加复杂一点的操作，例如过滤出感兴趣的图片。这个完全取决于应用接下来要做些什么。
+
+>翻译：[@ifeegoo](https://github.com/ifeegoo)  
+>校对：[@misparking](https://github.com/misparking)   
+>原始文档：<https://developer.android.google.cn/training/sharing/receive.html>  
 
 
 
