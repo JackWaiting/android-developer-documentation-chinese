@@ -4,7 +4,7 @@
 
 <small>Android Beam 文件传输功能有以下要求：</small>
 
-<small>1.Android Beam 大文件传输功能在 Android 4.1（API Level 16）以及更高版本上才有。</small>
+<small>1.Android Beam 大文件传输功能在 Android 4.1（API Level 16）以及更高版本上才能使用。</small>
 
 <small>2.你要传输的文件必须位于外部存储。更多关于外部存储的使用，请参阅[外部存储的使用](https://developer.android.google.cn/guide/topics/data/data-storage.html#filesExternal)。</small>
 
@@ -14,7 +14,7 @@
 
 ## Manifest 文件中声明特性
 
-首先，编辑你的应用 Manifest 文件来声明应用需要的权限和特性。
+首先，编辑应用中的 Manifest 文件来声明应用需要的权限和特性。
 
 ### 请求权限
 
@@ -41,7 +41,7 @@
 
 ### 指定 NFC 特性
 
-<small>可以通过追加一个 `<uses-feature>` 的 `<manifest>` 的子元素，来声明你的应用需要使用 NFC。将 `android:required` 属性设置为 `true` 的话，就表明你的应用必须要求设备有 NFC 功能，才能使用。</small>
+<small>可以通过追加一个 `<uses-feature>` 的 `<manifest>` 的子元素，来声明你的应用需要使用 NFC。将 `android:required` 属性设置为 `true` 的话，就表明只有当前 NFC 连接打开时应用才能使用。</small>
 
 <small>以下代码片段教你如何指定 `<uses-feature>` 元素：</small>
 
@@ -51,7 +51,7 @@
     android:required="true" />
 ```
 
-备注：如果你的应用对 NFC 的使用只是一个可选项，但是如果不支持 NFC 功能的话，仍然可以工作，你应当将 `android:required` 属性设置成 `false`，在代码中判断是否支持 NFC。
+备注：如果你的应用对 NFC 的使用只是一个可选项，但是如果当前 NFC 功能不能使用的话，仍然可以工作，你应当将 `android:required` 属性设置成 `false`，在代码中判断是否支持 NFC。
 
 ### 指定 Android Beam 文件传输
 
@@ -169,7 +169,7 @@ public class MainActivity extends Activity {
 
 ## 指定传输文件
 
-要想向其他支持 NFC 设备传输一个或多个文件的话，需要获取每一个文件的 URI （带有文件 scheme 的 URI），然后将这个 URI 添加到 Uri 对象数组中。传输一个文件，你需要拥有这个文件的完全读写权限。例如，以下代码片段会告知你如何从一个文件名中获取文件 URI，然后添加 URI 到数组中：
+要想向其他支持 NFC 功能的设备传输一个或多个文件的话，需要获取每一个文件的 URI （带有文件 scheme 的 URI），然后将这个 URI 添加到 Uri 对象数组中。传输一个文件，你需要拥有这个文件的完全读写权限。例如，以下代码片段会告知你如何从一个文件名中获取文件 URI，然后添加 URI 到数组中：
 
 ```
         /*
@@ -191,6 +191,7 @@ public class MainActivity extends Activity {
 ```
 
 >翻译：[@ifeegoo](https://github.com/ifeegoo)   
+>审核：[@misparking](https://github.com/misparking)    
 >原始文档：<https://developer.android.google.cn/training/beam-files/send-files.html>  
 
 
