@@ -67,7 +67,7 @@
        
 * [用图形和动画构建应用程序](develop/training/building-apps-with-graphics-and-animation/README.md)
    * [使用 OpenGL ES 显示图形 ](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/README.md)
-       * [建立 OpenGL ES 环境](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/building-an-openGL-ES-environment.md)
+       * [建立 OpenGL ES 环境](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/building-an-opengl-es-environment.md)
        * [定义 Shapes](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/defining-shapes.md)
        * [绘制 Shapes](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/drawing-shapes.md) 
        * [应用投影和相机视图](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/applying-projection-and-camera-views.md) 
