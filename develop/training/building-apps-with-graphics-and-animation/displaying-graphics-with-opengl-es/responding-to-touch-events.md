@@ -110,4 +110,5 @@ public void onDrawFrame(GL10 gl) {
 图 1. 三角形随着触摸屏幕的手指滑动而旋转(圆点为当前触摸位置).
 
 >翻译：[@misparking](https://github.com/misparking)    
+> 审核：[@iOnesmile](https://github.com/iOnesmile)      
 原始文档：<https://developer.android.google.cn/training/graphics/opengl/touch.html>
