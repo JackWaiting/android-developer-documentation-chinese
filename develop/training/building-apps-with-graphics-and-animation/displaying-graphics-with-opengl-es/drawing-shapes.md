@@ -159,6 +159,7 @@
 
 最后，这三角形是静止的，有点无聊，在[添加动作课](https://developer.android.google.cn/training/graphics/opengl/motion.html)堂时，使这个形状旋转，使OpenGL ES图像渠道更加有趣。
 
->翻译：[@northJjL](https://github.com/northJjL)       
+>翻译：[@northJjL](https://github.com/northJjL)                                
+>审核：[@JackWaiting](https://github.com/JackWaiting)       
 原始文档：<https://developer.android.google.cn/training/graphics/opengl/draw.html#draw>
 
