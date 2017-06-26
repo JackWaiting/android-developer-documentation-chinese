@@ -2,17 +2,17 @@
 
 在OpenGL ES环境中，投影和摄像机视图允许你的眼睛看到物体对象更接近的方式显示绘制的对象。物理观察的这种模拟是通过绘制对象坐标的数学变换完成的：
 
-- 投影 - 此变换根据显示 [GLSurfaceView](https://developer.android.com/reference/android/opengl/GLSurfaceView.html) 的宽度和高度来调整绘制对象的坐标。没有这个计算， OpenGL ES 绘制的对象被视图窗口的不等比例偏移。在渲染器的 [onSurfaceChanged()](https://developer.android.com/reference/android/opengl/GLSurfaceView.Renderer.html#onSurfaceChanged) 方法中建立或更改 OpenGL 视图的比例时，通常只需计算投影变换。有关 OpenGL ES 投影和坐标映射的更多信息，请[参阅绘制对象的坐标坐标](https://developer.android.com/guide/topics/graphics/opengl.html#coordinate-mapping)。- 
+- 投影 - 此变换根据显示 [GLSurfaceView](https://developer.android.com/reference/android/opengl/GLSurfaceView.html) 的宽度和高度来调整绘制对象的坐标。没有这个计算， OpenGL ES 绘制的对象被视图窗口的不等比例偏移。在渲染器的 [onSurfaceChanged()](https://developer.android.com/reference/android/opengl/GLSurfaceView.Renderer.html#onSurfaceChanged) 方法中建立或更改 OpenGL 视图的比例时，通常只需计算投影变换。有关 OpenGL ES 投影和坐标映射的更多信息，请[参阅绘制对象的坐标坐标](https://developer.android.com/guide/topics/graphics/opengl.html#coordinate-mapping)。 
 
  
-- 相机视图 - 此转换根据虚拟相机位置调整绘制对象的坐标。请注意，OpenGL ES 不会定义实际的摄像机对象，而是提供了通过转换绘制对象的显示来模拟摄像机的实用方法。建立 [GLSurfaceView](https://developer.android.com/reference/android/opengl/GLSurfaceView.html) 时，相机视图转换可能只计算一次，或者可能会根据用户操作或应用程序的功能动态更改。-
+- 相机视图 - 此转换根据虚拟相机位置调整绘制对象的坐标。请注意，OpenGL ES 不会定义实际的摄像机对象，而是提供了通过转换绘制对象的显示来模拟摄像机的实用方法。建立 [GLSurfaceView](https://developer.android.com/reference/android/opengl/GLSurfaceView.html) 时，相机视图转换可能只计算一次，或者可能会根据用户操作或应用程序的功能动态更改。
 
 
 本课介绍如何创建投影和相机视图，并将其应用于 [GLSurfaceView](https://developer.android.com/reference/android/opengl/GLSurfaceView.html) 中绘制的形状。
 
 ## 定义投影
 
-投影变换的数据在 [GLSurfaceView.Renderer](https://developer.android.com/reference/android/opengl/GLSurfaceView.Renderer.html) 类的 [onSurfaceChanged()](https://developer.android.com/reference/android/opengl/GLSurfaceView.Renderer.html#onSurfaceChanged)() 方法中计算。 以下示例代码使用 [GLSurfaceView](https://developer.android.com/reference/android/opengl/GLSurfaceView.html) 的高度和宽度，并使用它使用 [Matrix.frustumM()](https://developer.android.com/reference/android/opengl/Matrix.html#frustumM)) 方法填充投影变换矩阵：
+投影变换的数据在 [GLSurfaceView.Renderer](https://developer.android.com/reference/android/opengl/GLSurfaceView.Renderer.html) 类的 [onSurfaceChanged()](https://developer.android.com/reference/android/opengl/GLSurfaceView.Renderer.html#onSurfaceChanged) 方法中计算。 以下示例代码使用 [GLSurfaceView](https://developer.android.com/reference/android/opengl/GLSurfaceView.html) 的高度和宽度，并使用它使用 [Matrix.frustumM()](https://developer.android.com/reference/android/opengl/Matrix.html#frustumM)) 方法填充投影变换矩阵：
 
 	// mMVPMatrix is an abbreviation for "Model View Projection Matrix"
 	private final float[] mMVPMatrix = new float[16];
@@ -99,12 +99,11 @@
 
 一旦你正确地计算并应用了投影和相机视图转换，你的图形对象就按照正确的比例绘制，应该是这样的：
 
-![](https://raw.githubusercontent.com/DeveloperDocumentation/android-developer-documentation-chinese/master/develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-openGL-ES/ogl-triangle-projected.png)
+![](ogl-triangle-projected.png)
 
 **图1.**应用投影和相机视图绘制的三角形。
 
-现在，您有一个应用程序以正确的比例显示您的形状，现在是添加运动到您的形状的时间。			
-
-> 翻译：[JackWaiting](https://github.com/JackWaiting)
-
-> 原始文档：[https://developer.android.com/training/graphics/opengl/projection.html#projection](https://developer.android.com/training/graphics/opengl/projection.html#projection)								
+现在，您有一个应用程序以正确的比例显示您的形状，现在是添加运动到您的形状的时间。				
+>翻译：[JackWaiting](https://github.com/JackWaiting)    
+> 审核：[@northJjL](https://github.com/northJjL)        
+原始文档：[https://developer.android.com/training/graphics/opengl/projection.html#projection](https://developer.android.com/training/graphics/opengl/projection.html#projection)							
