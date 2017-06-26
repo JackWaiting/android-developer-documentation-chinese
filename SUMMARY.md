@@ -32,7 +32,7 @@
    * [与其他应用交互](develop/training/getting-started/interacting-with-other-apps/README.md)
        * [使用户跳转到其他应用](develop/training/getting-started/interacting-with-other-apps/sending-the-user-to-another-app.md)
        * [获取 Activity 返回的结果](develop/training/getting-started/interacting-with-other-apps/getting-a-result-from-an-activity.md)
-       * [允许一个应用启动另一个应用](develop/training/getting-started/interacting-with-other-apps/allowing-other-apps-to-start-your-activity.md) 
+       * [允许一个应用启动另一个应用](develop/training/getting-started/interacting-with-other-apps/allowing-other-apps-to-start-your-activity.md)
     
    * [使用系统权限](develop/training/getting-started/working-with-system-permissions/README.md)
        * [声明权限](develop/training/getting-started/working-with-system-permissions/declaring-permissions.md)
@@ -43,7 +43,7 @@
    * [分享简单的数据](develop/training/building-apps-with-content-sharing/sharing-simple-data/README.md)
        * [向其他应用发送简单的数据](develop/training/building-apps-with-content-sharing/sharing-simple-data/sending-simple-data-to-other-apps.md)
        * [接收从其他应用发送的数据](develop/training/building-apps-with-content-sharing/sharing-simple-data/receiving-simple-data-from-other-apps.md)
-       * [增加简单的分享功能](develop/training/building-apps-with-content-sharing/sharing-simple-data/adding-an-easy-share-action.md)  
+       * [增加简单的分享功能](develop/training/building-apps-with-content-sharing/sharing-simple-data/adding-an-easy-share-action.md)
    
    * [分享文件](develop/training/building-apps-with-content-sharing/sharing-files/README.md)
        * [建立分享文件](develop/training/building-apps-with-content-sharing/sharing-files/setting-up-file-sharing.md)
@@ -72,22 +72,21 @@
        * [绘制 Shapes](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/drawing-shapes.md) 
        * [应用投影和相机视图](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/applying-projection-and-camera-views.md) 
        * [添加移动](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/adding-motion.md)
-       * [响应触摸事件](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/responding-to-touch-events.md)
+       * [响应触摸事件](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/responding-to-touch-events.md)  
        
     * [场景动画和过渡动画](develop/training/building-apps-with-graphics-and-animation/animating-views-using-scenes-and-transitions/README.md)
        * [过渡动画结构](develop/training/building-apps-with-graphics-and-animation/animating-views-using-scenes-and-transitions/the-transitions-framework.md)
        * [创建场景动画](develop/training/building-apps-with-graphics-and-animation/animating-views-using-scenes-and-transitions/creating-a-scene.md)
        * [引用过渡动画](develop/training/building-apps-with-graphics-and-animation/animating-views-using-scenes-and-transitions/applying-a-transition.md) 
-       * [创建普通过渡动画](develop/training/building-apps-with-graphics-and-animation/animating-views-using-scenes-and-transitions/creating-custom-transitions.md) 
+       * [创建普通过渡动画](develop/training/building-apps-with-graphics-and-animation/animating-views-using-scenes-and-transitions/creating-custom-transitions.md)   
 
     * [添加动画](develop/training/building-apps-with-graphics-and-animation/adding-animations/README.md)
        * [View 间渐变](develop/training/building-apps-with-graphics-and-animation/adding-animations/crossfading-two-views.md)
        * [使用 ViewPager 实现屏幕滑动](develop/training/building-apps-with-graphics-and-animation/adding-animations/using-viewpager-for-screen-slide.md)
        * [卡片翻转动画](develop/training/building-apps-with-graphics-and-animation/adding-animations/displaying-card-flip-animations.md) 
        * [缩放 View](develop/training/building-apps-with-graphics-and-animation/adding-animations/zooming-a-view.md) 
-       * [布局改变动画](develop/training/building-apps-with-graphics-and-animation/adding-animations/animating-layout-changes.md)
+       * [布局改变动画](develop/training/building-apps-with-graphics-and-animation/adding-animations/animating-layout-changes.md)  
                
-      
 * [API 指南](develop/api-guides/README.md)
    * [UI 指南](develop/api-guides/ui-guidelines/README.md)
        * [图标设计指南](develop/api-guides/ui-guidelines/icon-design-guidelines/README.md)
