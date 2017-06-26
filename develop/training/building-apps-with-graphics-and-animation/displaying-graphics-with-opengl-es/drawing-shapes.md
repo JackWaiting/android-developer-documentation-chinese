@@ -163,8 +163,6 @@
 
 这个代码实例有一些问题，首先，它不会给你的朋友带来深刻的印象，其次，在你改设备的屏幕方向的时候，这个三角形会被压扁，改变形状。图形倾斜的实际原因是由于类对象顶点没有得到屏幕区域修正到正常比例显示[GLSurfaceView](https://developer.android.google.cn/reference/android/opengl/GLSurfaceView.html)。在下一堂课中，可以使用投射和相机视图修复他们。
 
-最后，这三角形是静止的，有点无聊，在[添加动作](https://developer.android.google.cn/training/graphics/opengl/motion.html)课堂时，让这个形状旋转，使OpenGL ES图像渠道更加有趣。
-
->翻译：[@northJjL](https://github.com/northJjL)      
-> 审核：       
+>翻译：[@northJjL](https://github.com/northJjL)                                
+>审核：[@JackWaiting](https://github.com/JackWaiting)       
 原始文档：<https://developer.android.google.cn/training/graphics/opengl/draw.html#draw>
