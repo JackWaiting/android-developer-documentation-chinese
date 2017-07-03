@@ -1,9 +1,12 @@
-# 绘制 Shapes
+## 绘制Shapes
 
-在你定义用OpenGL绘制图像之后，你可能想去画它们。使用OpenGL ES 2.0绘制图形比你想象中要多一些代码，因为提供了非常好的处理在控制图形渲染上的Api。
-本课解释如何使用OpenGL ES 2.0 API绘制上一堂课定义的图像。
+在你用OpenGL定义绘制图像之后，你可能想要把它们画出来。它提供的api非常好的处理了控制图形和渲染，所以使用OpenGL ES 2.0绘制图形比你想象中还要多一些代码。
+
+本课说明了如何使用OpenGL ES 2.0 API绘制上一堂课定义的图像。
+
 ## 初始化图形 
-在进行任何绘图之前，你必须初始化并加载你计划绘制的图形。除非程序中使用的形状结构（原始坐标）在执行过程中发生变化，为了你渲染器的内存和执行效率上，你应该初始化它们的 [onSurfaceCreated()](https://developer.android.google.cn/reference/android/opengl/GLSurfaceView.Renderer.html) 方法。
+
+在进行任何绘图之前，你必须初始化并加载你计划要绘制的图形。除非程序中使用的形状结构（原始坐标）在执行过程中发生变化，你应该在您的渲染器的 [onSurfaceCreated()](https://developer.android.google.cn/reference/android/opengl/GLSurfaceView.Renderer.html) 方法初始化它们，以用于内存和处理效率。
 
 	public class MyGLRenderer implements GLSurfaceView.Renderer {
 	    ...
@@ -23,7 +26,8 @@
 
 
 ## 绘制图形
-使用OpenGL ES 2.0 绘制一个定义好的图形需要大量的代码，因此你必须提供非常多细节在图形渲染上，具体来说，你必须定义以下内容：
+
+使用OpenGL ES 2.0 绘制一个定义好的图形需要大量的代码，因此你必须提供非常多图形渲染上的细节，具体来说，你必须定义以下内容：
 
 - 顶点着色器- OpenGL ES图形代码渲染顶点的形状。
 
@@ -52,7 +56,7 @@
 	}
 
 
-着色器包含OpenGL的着色语言（GLSL）代码，必须被编译使用在OpenGL ES的环境之前。去编译该代码时，创建在你的渲染器类的实用方法。
+着色器包含OpenGL的着色语言（GLSL）代码，它必须被编译使用在OpenGL ES的环境之前。在编译该代码时，创建渲染器类的实用方法。
 
 	public static int loadShader(int type, String shaderCode){
 	
@@ -67,9 +71,9 @@
 	    return shader;
 	}
 
-为了绘制你要的形状，你必须编译该着色器代码，添加它们到OpenGL ES程序类和程序链接，在你的绘制类完成构造函数时，它只完成了一次。
+为了绘制你要的形状，你必须编译该着色器代码，在你的绘制类完成构造函数时，添加它们到OpenGL ES程序类和程序链接，它只会完成了一次。
 
->笔记: 编译OpenGL ES着色器和链接程序在CPU周期和处理时间上是很昂贵的。因此你应该避免多次操作。如果运行时不知道着色器内容，你应该构建你的代码，这样他们只需创建一次，然后缓存以后使用。
+>注意: 编译OpenGL ES着色器和链接程序在CPU周期和处理时间上是很昂贵的。因此你应该避免多次操作。如果运行时不知道着色器内容，你应该构建你的代码，这样他们只需创建一次，然后缓存以后使用。
 
 	public class Triangle() {
 	    ...
@@ -98,7 +102,7 @@
 	    }
 	}
 
-此时此刻，你准备添加绘制你的图形的实际调用，使用OpenGL ES的绘制图形需要指定几个参数。告诉渲染渠道你想要绘制什么以及如何绘制它。由于绘制选择能根据形状而变化，所以让你的形状类包含自己的拥有绘制逻辑是一个好主意。
+此时此刻，你该准备添加绘制图形的实际调用了，使用OpenGL ES的绘制图形需要指定几个参数。告诉渲染渠道你想要绘制什么以及如何绘制它。由于绘制选择能根据形状而变化，所以让你的形状类包含自己的绘制逻辑是一个好主意。
 
 创建绘制图形的draw()方法，这代码将位置和颜色值设置为图形的顶点着色器以及片段着色器，然后执行绘制功能。
 
@@ -143,7 +147,7 @@
 	    mTriangle.draw();
 	}
 
-一旦你有了所有这些代码的代付，绘制该对象仅仅需要调用draw方法从你渲染器的[onDrawFrame()](https://developer.android.google.cn/reference/android/opengl/GLSurfaceView.Renderer.html)方法内。
+一旦你拥有了这些代码，绘制该对象仅仅需要从你渲染器的[onDrawFrame()](https://developer.android.google.cn/reference/android/opengl/GLSurfaceView.Renderer.html)方法内调用draw方法。
 
 	public void onDrawFrame(GL10 unused) {
 	    ...
@@ -151,14 +155,14 @@
 	    mTriangle.draw();
 	}
 
-在你跑应用程序的时候，应该看起来像这样。
+在你跑应用程序的时候，应该看起来像这样:
+
 ![image](ogl-triangle.png) 
-图形1.没有投射或照相视图绘制的三角形。
 
-这个代码实例有一些问题，首先，它不会给你的朋友带来深刻的印象，其次，在你改设备的屏幕方向的时候，这个三角形会被压扁，改变形状。图形倾斜的实际原因是由于类对象顶点没有得到屏幕区域修正的比例，显示[GLSurfaceView](https://developer.android.google.cn/reference/android/opengl/GLSurfaceView.html)。在下一堂课中，可以使用投射和相机视图修复他们。
+**图1** 没有投射或照相视图绘制的三角形。
 
-最后，这三角形是静止的，有点无聊，在[添加动作课](https://developer.android.google.cn/training/graphics/opengl/motion.html)堂时，使这个形状旋转，使OpenGL ES图像渠道更加有趣。
+这个代码实例有一些问题，首先，它不会给你的朋友带来深刻的印象，其次，在你改设备的屏幕方向的时候，这个三角形会被压扁，改变形状。图形倾斜的实际原因是由于类对象顶点没有得到屏幕区域修正到正常比例显示[GLSurfaceView](https://developer.android.google.cn/reference/android/opengl/GLSurfaceView.html)。在下一堂课中，可以使用投射和相机视图修复他们。
 
->翻译：[@northJjL](https://github.com/northJjL)       
+>翻译：[@northJjL](https://github.com/northJjL)                                
+>审核：[@JackWaiting](https://github.com/JackWaiting)       
 原始文档：<https://developer.android.google.cn/training/graphics/opengl/draw.html#draw>
-
