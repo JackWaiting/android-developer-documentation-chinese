@@ -72,20 +72,20 @@
        * [绘制 Shapes](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/drawing-shapes.md) 
        * [应用投影和相机视图](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/applying-projection-and-camera-views.md) 
        * [添加移动](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/adding-motion.md)
-       * [响应触摸事件](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/responding-to-touch-events.md)  
+       * [响应触摸事件](develop/training/building-apps-with-graphics-and-animation/displaying-graphics-with-opengl-es/responding-to-touch-events.md)
        
-    * [场景动画和过渡动画](develop/training/building-apps-with-graphics-and-animation/animating-views-using-scenes-and-transitions/README.md)
+   * [场景动画和过渡动画](develop/training/building-apps-with-graphics-and-animation/animating-views-using-scenes-and-transitions/README.md)
        * [过渡动画结构](develop/training/building-apps-with-graphics-and-animation/animating-views-using-scenes-and-transitions/the-transitions-framework.md)
        * [创建场景动画](develop/training/building-apps-with-graphics-and-animation/animating-views-using-scenes-and-transitions/creating-a-scene.md)
        * [引用过渡动画](develop/training/building-apps-with-graphics-and-animation/animating-views-using-scenes-and-transitions/applying-a-transition.md) 
-       * [创建普通过渡动画](develop/training/building-apps-with-graphics-and-animation/animating-views-using-scenes-and-transitions/creating-custom-transitions.md)   
-
-    * [添加动画](develop/training/building-apps-with-graphics-and-animation/adding-animations/README.md)
+       * [创建普通过渡动画](develop/training/building-apps-with-graphics-and-animation/animating-views-using-scenes-and-transitions/creating-custom-transitions.md)
+       
+   * [添加动画](develop/training/building-apps-with-graphics-and-animation/adding-animations/README.md)
        * [View 间渐变](develop/training/building-apps-with-graphics-and-animation/adding-animations/crossfading-two-views.md)
        * [使用 ViewPager 实现屏幕滑动](develop/training/building-apps-with-graphics-and-animation/adding-animations/using-viewpager-for-screen-slide.md)
        * [卡片翻转动画](develop/training/building-apps-with-graphics-and-animation/adding-animations/displaying-card-flip-animations.md) 
        * [缩放 View](develop/training/building-apps-with-graphics-and-animation/adding-animations/zooming-a-view.md) 
-       * [布局改变动画](develop/training/building-apps-with-graphics-and-animation/adding-animations/animating-layout-changes.md)  
+       * [布局改变动画](develop/training/building-apps-with-graphics-and-animation/adding-animations/animating-layout-changes.md)
                
 * [API 指南](develop/api-guides/README.md)
    * [UI 指南](develop/api-guides/ui-guidelines/README.md)
