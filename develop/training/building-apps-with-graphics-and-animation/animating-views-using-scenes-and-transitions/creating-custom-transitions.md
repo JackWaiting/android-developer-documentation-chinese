@@ -42,7 +42,7 @@ public class CustomTransition extends Transition {
 ```xml
 package_name:transition_name:property_name
 ```
-The following snippet shows an implementation of the captureStartValues() method:
+以下片段显示了 captureStartValues（）方法的实现：
 
 ```java
 public class CustomTransition extends Transition {
@@ -90,8 +90,7 @@ public void captureEndValues(TransitionValues transitionValues) {
 
 ## 创建自定义动画对象
 
-对一个控件进行通过动画在它的起始场景和结束场景
-通过动画的形式对控件的开始场景和结束场景进行改变，需要使用一个动画对象并重写 [createAnimator()](https://developer.android.google.cn/reference/android/transition/Transition.html#createAnimator(android.view.ViewGroup, android.transition.TransitionValues, android.transition.TransitionValues)) 方法。当框架调用此方法时，将会把你获取到的开始时的值和结束时的值传递到根控件和 [TransitionValues](https://developer.android.google.cn/reference/android/transition/TransitionValues.html) 对象中。
+对一个控件进行过渡在它的起始场景和结束场景之间，通过动画的形式对控件从开始场景到结束场景之间进行改变，需要使用一个动画对象并重写 [createAnimator()](https://developer.android.google.cn/reference/android/transition/Transition.html#createAnimator(android.view.ViewGroup, android.transition.TransitionValues, android.transition.TransitionValues)) 方法。当框架调用此方法时，将会把你获取到的开始时的值和结束时的值传递到根控件和 [TransitionValues](https://developer.android.google.cn/reference/android/transition/TransitionValues.html) 对象中。
 
 这个系统框架调用 [createAnimator()](https://developer.android.google.cn/reference/android/transition/Transition.html#createAnimator(android.view.ViewGroup, android.transition.TransitionValues, android.transition.TransitionValues)) 的次数取决于控件在开始和结束时的场景过程中的变化次数。例如，通过自定义过渡动画实现淡入淡出动画。如果在开始时的场景已知有五个目标动画效果，在结束的场景中移除了其中两个，同时另外三个新的动画效果会添加在新的目标任务。也就是说框架会调用 [createAnimator()](https://developer.android.google.cn/reference/android/transition/Transition.html#createAnimator(android.view.ViewGroup, android.transition.TransitionValues, android.transition.TransitionValues)) 六次：三次淡出和淡入；二次淡出以及一次在新的目标结束场景中的淡入效果。
 
@@ -104,5 +103,6 @@ public void captureEndValues(TransitionValues transitionValues) {
 ## 使用自定义动画
 自定义过渡动画和内置过渡类的实现原理类似。你可以参考 [Applying a Transition](https://developer.android.google.cn/training/transitions/transitions.html#Apply) 描述的那样，去使用过渡动画管理器应用自定义过渡动画。
 
->翻译：[@misparking](https://github.com/misparking)       
+>翻译：[@misparking](https://github.com/misparking)   
+>审核：[@iOnesmile](https://github.com/ionesmile)      
 原始文档：<https://developer.android.google.cn/training/transitions/custom-transitions.html>
