@@ -1,14 +1,15 @@
-#缩放视图
+# 缩放视图
 
-这节课展示了如何实现触摸缩放动画，这对于可以支持缩略图到屏幕全尺寸图像的动画效果的应用
-程序如相册画廊是比较实用的。
-下面是一个触摸缩放动画，看起来像是把图片从缩略图扩展到全屏幕。
+这节课展示如何实现触摸缩放动画，它是比较实用的，例如在相册中用动画将缩略图扩展到全屏尺寸的图片。
+
+下面是一个触摸缩放动画，内容是把缩略图展开到全屏幕显示。
 
 <iframe  src="anim_zoom.mp4"></iframe>
->*交叉渐变动画*    
->*点击设备屏幕来重新播放电影*
 
-如果您想跳到前面查看完整的工作示例，请[点击下载](https://commondatastorage.googleapis.com/androiddevelopers/shareables/training/Animations.zip)并运行示例应用程序，然后选择缩放示例。请参见下面的代码实现文件：
+>*缩放动画*    
+>*点击设备屏幕来重新播放视频*
+
+如果你想提前查看完整的工作示例，请[点击下载](https://commondatastorage.googleapis.com/androiddevelopers/shareables/training/Animations.zip)并运行示例应用程序，然后选择缩放示例。请参见下面文件的实现代码：
 
 
 * `src/TouchHighlightImageButton.java`(一个简单的帮助类，当按下图像按钮时会显示蓝色的触摸高亮。)
@@ -18,7 +19,7 @@
 
 ## 创建视图
 
-为想要缩放的内容创建包含小版本和大版本的布局文件。下面的示例为可点击的图片缩略图创建了 [ImageButton](https://developer.android.google.cn/reference/android/widget/ImageButton.html) 以及可用来展示图片大图的 [ImageView](https://developer.android.google.cn/reference/android/widget/ImageView.html)。
+为想要缩放的内容创建布局文件，包含小版本和大版本的内容。下面的示例创建了一个缩略图并可点击的 [ImageButton](https://developer.android.google.cn/reference/android/widget/ImageButton.html) 和一个展示图片大图的 [ImageView](https://developer.android.google.cn/reference/android/widget/ImageView.html)。
 
 ```xml
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -58,9 +59,9 @@
 
 </FrameLayout>
 ```
-##设置缩放动画
+## 设置缩放动画
 
-一旦实现了布局，我们需要设置触发缩放动画的事件 handler。下面的例子为 [ImageButton](https://developer.android.google.cn/reference/android/widget/ImageButton.html)添加了一个 View.OnClickListener，当用户点击按钮时它执行缩放动画。
+当应用布局后，需要设置事件用来触发缩放动画。下面的例子为 [ImageButton](https://developer.android.google.cn/reference/android/widget/ImageButton.html) 添加了一个 [View.OnClickListener](https://developer.android.google.cn/reference/android/view/View.OnClickListener.html)，当用户点击按钮时执行缩放动画。
 
 ```java
 
@@ -98,18 +99,18 @@ public class ZoomActivity extends FragmentActivity {
 
 ```
 
-##缩放视图
+## 缩放视图
 
 
 你需要在合适的时候进行缩放动画。一般来说，使用动画时需要按照边界来把正常尺寸的视图扩展到大尺寸的视图，下面的方法展示了如何实现缩放动画：
 
-1.把高清图像资源设置到已经被隐藏的“放大版”的 [ImageView](https://developer.android.google.cn/reference/android/widget/ImageView.html) 中。下面的示例在 UI 线程上加载一个大的图像资源以简化操作。但是我们需要在一个单独的线程中来加载以免阻塞UI线程，然后再回到UI线程中设置。理想状况下，图片不要大过屏幕尺寸。
+1. 把高清图像资源设置到已经被隐藏的“放大版”的 [ImageView](https://developer.android.google.cn/reference/android/widget/ImageView.html) 中。下面的示例在 UI 线程上加载一个大的图像资源以简化操作。但是我们需要在一个单独的线程中来加载以免阻塞UI线程，然后再回到UI线程中设置。理想状况下，图片不要大过屏幕尺寸。
 
-2.计算 [ImageView](https://developer.android.google.cn/reference/android/widget/ImageView.html) 开始和结束时的边界。
+2. 计算 [ImageView](https://developer.android.google.cn/reference/android/widget/ImageView.html) 开始和结束时的边界。
 
-3.从起始边到结束边同步地动态改变四个点的位置和大小属性 [X](https://developer.android.google.cn/reference/android/view/View.html#X)，[Y](https://developer.android.google.cn/reference/android/view/View.html#Y)（[SCALE_X](https://developer.android.google.cn/reference/android/view/View.html#SCALE_X) 和 [SCALE_Y](https://developer.android.google.cn/reference/android/view/View.html#SCALE_Y)）。这四个动画被加入到了 [AnimatorSet](https://developer.android.google.cn/reference/android/animation/AnimatorSet.html)，所以它们可以同一时间开始。
+3. 从起始边到结束边同步地动态改变四个点的位置和大小属性 [X](https://developer.android.google.cn/reference/android/view/View.html#X)，[Y](https://developer.android.google.cn/reference/android/view/View.html#Y)（[SCALE_X](https://developer.android.google.cn/reference/android/view/View.html#SCALE_X) 和 [SCALE_Y](https://developer.android.google.cn/reference/android/view/View.html#SCALE_Y)）。这四个动画被加入到了 [AnimatorSet](https://developer.android.google.cn/reference/android/animation/AnimatorSet.html)，所以它们可以同一时间开始。
 
-4.通过运行类似的动画可以用来缩小图像，即当用户在点击屏幕放大图像时是相反的。我们可以在ImageView中添加一个 [View.OnClickListener](https://developer.android.google.cn/reference/android/view/View.OnClickListener.html) 来实现它。当点击时，ImageView 缩回到原来缩略图的大小，然后设置它的 visibility 为 [GONE](https://developer.android.google.cn/reference/android/view/View.html#GONE) 来隐藏。
+4. 缩小已经被放大的图片，当用户点击时只需要执行类似的相反动画。我们可以在 ImageView 中添加一个 [View.OnClickListener](https://developer.android.google.cn/reference/android/view/View.OnClickListener.html) 来实现它。当点击时，ImageView 缩回到原来缩略图的大小，然后设置它的 visibility 为 [GONE](https://developer.android.google.cn/reference/android/view/View.html#GONE) 来隐藏。
 
 ```java
 
@@ -251,5 +252,8 @@ private void zoomImageFromThumb(final View thumbView, int imageResId) {
     });
 }
 ```
->翻译：[@misparking](https://github.com/misparking)   and
+
+
+>翻译：[@misparking](https://github.com/misparking)      
+>审核：[@iOnesmile](https://github.com/iOnesmile)      
 原始文档：<https://developer.android.google.cn/training/animation/zoom.html#animate>
