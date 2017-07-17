@@ -4,7 +4,16 @@
 
 下面是一个触摸缩放动画，内容是把缩略图展开到全屏幕显示。
 
-<iframe  src="anim_zoom.mp4"></iframe>
+<div style="
+  background: transparent url(https://developer.android.google.cn/static/images/styles/device_galaxynexus_blank_land_span8.png) no-repeat
+scroll top left; padding: 26px 68px 38px 72px; overflow: hidden;">
+  <video class="play-on-hover" autoplay="">
+    <source src="https://developer.android.google.cn/training/animation/anim_card_flip.mp4" type="video/mp4">
+    <source src="https://developer.android.google.cn/training/animation/anim_card_flip.webm" type="video/webm">
+    <source src="https://developer.android.google.cn/training/animation/anim_card_flip.ogv" type="video/ogg">
+  </video>
+</div>
+
 
 >*缩放动画*    
 >*点击设备屏幕来重新播放视频*
