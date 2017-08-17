@@ -88,9 +88,9 @@
        * [布局改变动画](develop/training/building-apps-with-graphics-and-animation/adding-animations/animating-layout-changes.md)
       
    * [无线连接设备](develop/training/building-apps-with-connectivity-the-cloud/connecting-devices-wirelessly/README.md)
-       * [使用网络服务搜索](develop/training/building-apps-with-connectivity-the-cloud/connecting-cevices-wirelessly/using-network-service-discovery.md)
-       * [使用 WiFi 建立 P2P 连接](develop/training/building-apps-with-connectivity-the-cloud/connecting-cevices-wirelessly/creating-p2p-connections-with-wifi.md)
-       * [使用 WiFi P2P 服务进行搜索](develop/training/building-apps-with-connectivity-the-cloud/connecting-cevices-wirelessly/using-wifi-p2p-for-service-discovery.md) 
+       * [使用网络服务搜索](develop/training/building-apps-with-connectivity-the-cloud/connecting-devices-wirelessly/using-network-service-discovery.md)
+       * [使用 WiFi 建立 P2P 连接](develop/training/building-apps-with-connectivity-the-cloud/connecting-devices-wirelessly/creating-p2p-connections-with-wifi.md)
+       * [使用 WiFi P2P 服务进行搜索](develop/training/building-apps-with-connectivity-the-cloud/connecting-devices-wirelessly/using-wifi-p2p-for-service-discovery.md) 
       
                
 * [API 指南](develop/api-guides/README.md)
