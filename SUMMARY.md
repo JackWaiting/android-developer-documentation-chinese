@@ -103,3 +103,5 @@
   * [标签图标](develop/api-guides/ui-guidelines/icon-design-guidelines/tab-icon.md)
   * [对话框图标](develop/api-guides/ui-guidelines/icon-design-guidelines/dialog-icon.md)
   * [列表图标](develop/api-guides/ui-guidelines/icon-design-guidelines/list-icon.md)
+
+* [Android Studio](android-studio/introduction/README.md)
