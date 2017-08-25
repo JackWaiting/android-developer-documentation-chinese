@@ -86,7 +86,8 @@
        * [卡片翻转动画](develop/training/building-apps-with-graphics-and-animation/adding-animations/displaying-card-flip-animations.md) 
        * [缩放 View](develop/training/building-apps-with-graphics-and-animation/adding-animations/zooming-a-view.md) 
        * [布局改变动画](develop/training/building-apps-with-graphics-and-animation/adding-animations/animating-layout-changes.md)
-      
+ 
+* [使用网络连接和云服务构建应用](develop/develop/training/building-apps-with-connectivity-the-cloud/README.md)      
    * [无线连接设备](develop/training/building-apps-with-connectivity-the-cloud/connecting-devices-wirelessly/README.md)
        * [使用网络服务搜索](develop/training/building-apps-with-connectivity-the-cloud/connecting-devices-wirelessly/using-network-service-discovery.md)
        * [使用 WiFi 建立 P2P 连接](develop/training/building-apps-with-connectivity-the-cloud/connecting-devices-wirelessly/creating-p2p-connections-with-wifi.md)
