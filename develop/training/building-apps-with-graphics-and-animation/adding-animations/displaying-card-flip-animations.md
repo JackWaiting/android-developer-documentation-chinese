@@ -28,9 +28,9 @@
 - layout/fragment\_card\_front.xml
 
 
-## 创建动画
+## 创建动画对象
 
-创建卡片翻转动画。在卡片的前面需要两个动画，动画向左出和从左进。同样在卡片的后面也需要两个动画，动画从右进和向右出。
+创建卡片翻转动画。在卡片的正面需要两个动画，动画向左出和从左进。同样在卡片的反面也需要两个动画，动画从右进和向右出。
 
 #### card\_flip\_left\_in.xml
 
@@ -61,7 +61,7 @@
 </set>
 ```
 
-#### card_flip_left_out.xml
+#### card\_flip\_left\_out.xml
 
 ```xml
 <set xmlns:android="http://schemas.android.com/apk/res/android">
@@ -83,7 +83,7 @@
 </set>
 ```
 
-#### card_flip_right_in.xml
+#### card\_flip\_right\_in.xml
 
 ```xml
 <set xmlns:android="http://schemas.android.com/apk/res/android">
@@ -112,7 +112,7 @@
 </set>
 ```
 
-#### card_flip_right_out.xml
+#### card\_flip\_right\_out.xml
 
 ```xml
 <set xmlns:android="http://schemas.android.com/apk/res/android">
@@ -136,7 +136,7 @@
 
 ## 创建视图
 
-卡片的每一面是单独的布局，包含着你想显示的任何内容。在它们之间翻转，诸如两块显示文本的屏，两张图像，或任何组合视图。在即将显示的动画中，需要使用两个布局。下面的布局是卡片的一面，显示的文本：
+卡片的每一面是单独的布局，包含着你想显示的任何内容。比如两屏文字，两张图片，或者任何视图的组合都可进行翻转。在即将显示的动画中，Fragment 需要使用两个布局。下面的布局是卡片的一面显示的文本：
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -180,7 +180,7 @@
 
 ## 创建 Fragment
 
-创建卡片前面和后面的 Fragment 类。在每个 Fragment 类的 [onCreateView()](https://developer.android.google.cn/reference/android/app/Fragment.html#onCreateView(android.view.LayoutInflater,%20android.view.ViewGroup,%20android.os.Bundle)) 方法中返回预先创建的布局。你可以在父类的 Activity 中创建要显示的卡片的 Fragment 实例。如下示例在父 Activity 内部的 Fragment 类：
+创建卡片正面和反面的 Fragment 类。在每个 Fragment 类的 [onCreateView()](https://developer.android.google.cn/reference/android/app/Fragment.html#onCreateView(android.view.LayoutInflater,%20android.view.ViewGroup,%20android.os.Bundle)) 方法中返回预先创建的布局。你可以在父类的 Activity 中创建要显示的卡片的 Fragment 实例。如下示例在父 Activity 内嵌的 Fragment 类：
 
 ```java
 public class CardFlipActivity extends Activity {
@@ -220,8 +220,7 @@ public class CardFlipActivity extends Activity {
     android:layout_height="match_parent" />
 ```
 
-在 Activity 代码中，设置刚才创建的布局。在 Activity 创建的时候设置一个默认 Fragment，通常是个不错的方式，因此下面示例的 Activity 展示了默认页面，卡片的前方：
-
+在 Activity 代码中，设置刚才创建的布局。在 Activity 创建的时候设置一个默认 Fragment，通常是个不错的方式，因此下面示例的 Activity 展示了如何默认显示卡片正面：
 ```java
 public class CardFlipActivity extends Activity {
 
@@ -241,7 +240,7 @@ public class CardFlipActivity extends Activity {
 }
 ```
 
-到目前为止卡片已经显示，在适当的时候通过动画翻转到卡片后面。创建方法显示卡片的另外一面，步骤如下：
+到目前为止卡片已经显示，在适当的时候通过动画翻转到卡片反面。创建方法显示卡片的另外一面，步骤如下：
 
 - 给 Fragment 事务设置之前创建好的自定义动画。
 
@@ -292,5 +291,6 @@ private void flipCard() {
 ```
 
 
-> 翻译：[@iOnesmile](https://github.com/ionesmile)          
+> 翻译：[@iOnesmile](https://github.com/ionesmile)    
+> 校对：[@misparking](https://github.com/misparking)      
 > 原始文档：<https://developer.android.google.cn/training/animation/cardflip.html>
