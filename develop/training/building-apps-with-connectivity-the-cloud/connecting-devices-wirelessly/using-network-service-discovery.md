@@ -1,13 +1,13 @@
 # 使用网络服务发现
 
-网络服务发现（NSD）提供了应用可以在本地网络上访问其他设备的服务。设备支持的 NSD 包括打印机、网络摄像头、HTTPS 服务器和其他移动设备。
+网络服务发现（NSD）提供了应用可以在本地网络上访问其他设备的服务。支持 NSD 的设备包括打印机、网络摄像头、HTTPS 服务器和其他移动设备。
 
 
 NSD 实现了基于 DNS 服务的发现机制（DNS-SD），允许应用程序通过指定类型的服务和指定名称的设备实例去请求服务，后者提供了必要的服务类型。DNS-SD 支持 Android 平台和其他移动平台。
 
 在应用中添加 NSD，可以让用户在同一个网络中辨别出支持应用请求服务的其他设备。这对于各种点对点的应用非常有用，例如文件共享或者多人联机游戏。Android NSD 的 API 可以简化实现这些功能的难度。
 
-这节课主要介绍如何构建一个应用，使其可以在局域网内广播名字和连接信息，并且扫描其它正在做同样事情的应用信息。最后，将介绍如果连接运行在另一台设备上的相同应用。
+这节课主要介绍如何构建一个应用，使其可以在局域网内广播名字和连接信息，并且扫描其它正在做同样事情的应用信息。最后，将介绍如何连接运行在另一台设备上的相同应用。
 
 
 
@@ -171,7 +171,7 @@ NSD API 通过使用该接口中的方法通知应用程序搜索何时开始、
 2.核对设备类型，确保服务类型是应用可以连接的。    
 3.核对服务名称，确保连接正确的应用。    
 
-有时候我们不必去核对服务名称，只需要在连接的具体应用进行检查。例如，应用也许只是想与运行在其他设备上的相同应用进行连接。然而，如果应用想要连接网络打印机，只需要确认服务类型为”_ipp._tcp"就可以了。
+有时候我们不必去核对服务名称，只需要在连接具体应用时进行检查。例如，应用也许只是想与运行在其他设备上的相同应用进行连接。然而，如果应用想要连接网络打印机，只需要确认服务类型为”_ipp._tcp"就可以了。
 
 设置监听后，调用 [discoverServices()](https://developer.android.google.cn/reference/android/net/nsd/NsdManager.html#discoverServices(java.lang.String, int, android.net.nsd.NsdManager.DiscoveryListener))，并传递相应的参数：应用需要的服务类型、使用的发现协议以及已经创建的监听器。
 
@@ -210,7 +210,7 @@ public void initializeResolveListener() {
 ```
 当服务解析完成后，应用会接收到包含 IP 地址和端口号的具体服务信息。这就是创建网络连接其他服务的所有信息了。
 ## 应用退出时注销服务
-在应用的生命周期中适时的开启和关闭 NSD 功能是很重要的。在应用关闭时注销 NSD，可以防止其他应用认为服务还是一直存在而去尝试连接它。另外，服务发现是一个比较消耗性能的操作，当 Activity 处理暂停时应该停止，而当 Activity 恢复时再重新打开。重写主 Activity 生命周期的方法，然后在适当的时机添加开启、停止服务广播和发现的代码。
+在应用的生命周期中适时的开启和关闭 NSD 功能是很重要的。在应用关闭时注销 NSD，可以防止其他应用认为服务还是一直存在而去尝试连接它。另外，服务发现是一个比较消耗性能的操作，当 Activity 暂停时应该停止，而当 Activity 恢复时再重新打开。重写主 Activity 生命周期的方法，然后在适当的时机添加开启、停止服务广播和发现的代码。
 
 
 ```java
@@ -250,4 +250,5 @@ public void initializeResolveListener() {
 
 >**备注**  
 翻译：[@misparking](https://github.com/misparking)    
-原始文档:  [https://developer.android.google.cn/training/connect-devices-wirelessly/nsd.html)
+审核：[@iOnesmile](https://github.com/iOnesmile)       
+原始文档:  <https://developer.android.google.cn/training/connect-devices-wirelessly/nsd.html>
