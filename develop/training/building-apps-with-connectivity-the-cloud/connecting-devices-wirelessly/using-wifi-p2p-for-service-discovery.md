@@ -1,3 +1,5 @@
+#使用Wifi P2P进行服务搜索
+
 本阶段的第一课[《使用网络服务搜索》](https://developer.android.google.cn/training/connect-devices-wirelessly/nsd.html)，展示如何搜索连接了本地网络的服务。然而使用 WiFi 对等网络（P2P）搜索服务可以直接搜索到附近设备的服务，而不需要连接网络。你可以让该服务运行在手机。这些功能可以帮助我们在两个应用间通讯，即使没有有效的网络或热点。
 
 > 尽管这一套 API 与之前课程《网络服务搜索》 API 大纲目的类似，但在代码实现还是有很大不同。这节课解说使用 WiFi P2P 如何从其它设备中搜索有效服务。这节课假定你已经熟悉了 [WiFi P2P](https://developer.android.google.cn/guide/topics/connectivity/wifip2p.html) API。
@@ -69,7 +71,7 @@ private void startRegistration() {
 
 ### 搜索附近服务
 
-使用回调方法通知应用中的有效服务，因此第一步是创建它们。创建 [WifiP2pManager.DnsSdTxtRecordListener](https://developer.android.google.cn/reference/android/net/wifi/p2p/WifiP2pManager.DnsSdTxtRecordListener.html) 对象来监听到来的消息，该消息由其它设备随意的广播。当收到一条消息，复制设备地址和其它任何你需要的相关信息到现在方法之外的数据结构中，这样稍后可以使用它们。下面的例子采用消息的 “buddyname” 字段作为它的标识。
+第一步应创建回调方法来通知应用中的有效服务。创建 [WifiP2pManager.DnsSdTxtRecordListener](https://developer.android.google.cn/reference/android/net/wifi/p2p/WifiP2pManager.DnsSdTxtRecordListener.html) 对象来监听回调的消息，该消息由其它设备随意的广播。当收到一条消息时，拿到设备地址或其它任何你需要的相关信息以便后续使用。下面的例子采用消息的 “buddyname” 字段作为它的标识。
 
 ```java
 final HashMap<String, String> buddies = new HashMap<String, String>();
@@ -93,7 +95,7 @@ private void discoverService() {
 }
 ```
 
-获取服务信息时，创建 [WifiP2pManager.DnsSdServiceResponseListener](https://developer.android.google.cn/reference/android/net/wifi/p2p/WifiP2pManager.DnsSdServiceResponseListener.html) 对象，它接收实际的描述和连接信息。之前的代码块实现的 [Map](https://developer.android.google.cn/reference/java/util/Map.html) 对象匹配了设备地址和名称。服务返回 DNS 记录和相关的服务信息。当完成这两个监听的实现后，使用 [setDnsSdResponseListeners()](https://developer.android.google.cn/reference/android/net/wifi/p2p/WifiP2pManager.html#setDnsSdResponseListeners(android.net.wifi.p2p.WifiP2pManager.Channel,android.net.wifi.p2p.WifiP2pManager.DnsSdServiceResponseListener,android.net.wifi.p2p.WifiP2pManager.DnsSdTxtRecordListener)) 方法添加它们到 [WifiP2pManager](https://developer.android.google.cn/reference/android/net/wifi/p2p/WifiP2pManager.html) 中。
+获取服务信息时，创建 [WifiP2pManager.DnsSdServiceResponseListener](https://developer.android.google.cn/reference/android/net/wifi/p2p/WifiP2pManager.DnsSdServiceResponseListener.html) 对象，它接收实际的描述和连接信息。之前的代码块实现的 [Map](https://developer.android.google.cn/reference/java/util/Map.html) 对象匹配设备地址和名称。服务返回 DNS 记录和相关的服务信息。当完成这两个监听的实现后，使用 [setDnsSdResponseListeners()](https://developer.android.google.cn/reference/android/net/wifi/p2p/WifiP2pManager.html#setDnsSdResponseListeners(android.net.wifi.p2p.WifiP2pManager.Channel,android.net.wifi.p2p.WifiP2pManager.DnsSdServiceResponseListener,android.net.wifi.p2p.WifiP2pManager.DnsSdTxtRecordListener)) 方法添加它们到 [WifiP2pManager](https://developer.android.google.cn/reference/android/net/wifi/p2p/WifiP2pManager.html) 中。
 
 ```java
 private void discoverService() {
@@ -169,7 +171,7 @@ mManager.discoverServices(channel, new ActionListener() {
 });
 ```
 
-如果一切顺利，很好，已经完成了。如果遇到问题，记得在之前有设置 [WifiP2pManager.ActionListener](https://developer.android.google.cn/reference/android/net/wifi/p2p/WifiP2pManager.ActionListener.html) 的异步监听，它提供了告诉成功和失败的回调。诊断问题时，使用在 [onFailure()](https://developer.android.google.cn/reference/android/net/wifi/p2p/WifiP2pManager.ActionListener.html#onFailure(int)) 方法中的调试码，该错误码示意着问题。下面是可能的错误码和它们的意思：
+如果一切顺利，很好，已经完成了。如果遇到问题，记得检查 [WifiP2pManager.ActionListener](https://developer.android.google.cn/reference/android/net/wifi/p2p/WifiP2pManager.ActionListener.html) 的异步监听，它提供了成功和失败的回调。如果回调 [onFailure()](https://developer.android.google.cn/reference/android/net/wifi/p2p/WifiP2pManager.ActionListener.html#onFailure(int)) 方法，则可能是代码有问题。下面是可能的错误码和它们的意思：
 
 1. [`P2P_UNSUPPORTED`](https://developer.android.google.cn/reference/android/net/wifi/p2p/WifiP2pManager.html#P2P_UNSUPPORTED)   
 	当前设备不支持 Wi-Fi P2P
@@ -182,5 +184,6 @@ mManager.discoverServices(channel, new ActionListener() {
 
 
 
->翻译：[@iOnesmile](https://github.com/iOnesmile)       
+>翻译：[@iOnesmile](https://github.com/iOnesmile)  
+>审核人：[@JackWaiting](https://github.com/JackWaiting)     
 原始文档：<https://developer.android.google.cn/training/connect-devices-wirelessly/nsd-wifi-direct.html#manifest>
